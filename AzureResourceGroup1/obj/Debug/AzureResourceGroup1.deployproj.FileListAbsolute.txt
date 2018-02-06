@@ -1,0 +1,5 @@
+C:\Users\vaishali_sharma\source\repos\WebApplication2\AzureResourceGroup1\obj\Debug\AzureResourceGroup1.deployprojResolveAssemblyReference.cache
+C:\Users\vaishali_sharma\source\repos\WebApplication2\AzureResourceGroup1\bin\Debug\Deploy-AzureResourceGroup.ps1
+C:\Users\vaishali_sharma\source\repos\WebApplication2\AzureResourceGroup1\bin\Debug\WebSite.json
+C:\Users\vaishali_sharma\source\repos\WebApplication2\AzureResourceGroup1\bin\Debug\WebSite.parameters.json
+C:\Users\vaishali_sharma\source\repos\WebApplication2\AzureResourceGroup1\bin\Debug\AzureResourceGroup1.exe.config

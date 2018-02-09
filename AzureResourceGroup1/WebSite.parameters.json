@@ -2,29 +2,6 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "hostingPlanName": {
-      "value": "randomapps"
-    },
-    "WebsiteName": {
-      "value": "mywebsitevaishaliabc"
-    },
-    "WebApplication1PackageFileName": {
-      "value": "package.zip"
-    },
-    "WebApplication1PackageFolder": {
-      "value": "WebApplication1"
-    },
-    "ServerErrorThrshold": {
-      "value": "0"
-    },
-    "ForbiddenRequestsThrshold": {
-      "value": "0"
-    },
-    "CPUHighAlertThreshold": {
-      "value": 90
-    },
-    "HTTPqueueThreshold": {
-      "value": "80"
-    }
-  }
+   
+}
 }

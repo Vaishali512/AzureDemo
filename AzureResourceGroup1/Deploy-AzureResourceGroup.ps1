@@ -2,7 +2,15 @@
 
 Param(
     [string] [Parameter(Mandatory=$true)] $ResourceGroupLocation,
-    [string] $ResourceGroupName = 'WebApplication1',
+    [string] [Parameter(Mandatory=$true)]$ResourceGroupName,
+	[string] [Parameter(Mandatory=$true)]$hostingPlanName,
+	[string] [Parameter(Mandatory=$true)]$WebsiteName,
+	[string] $WebApplication1PackageFileName,
+	[string] $WebApplication1PackageFolder,
+	[string] $ServerErrorThrshold,
+	[string] $ForbiddenRequestsThrshold,
+	[string] $CPUHighAlertThreshold,
+	[string] $HTTPqueueThreshold,
     [switch] $UploadArtifacts,
     [string] $StorageAccountName,
     [string] $StorageContainerName = $ResourceGroupName.ToLowerInvariant() + '-stageartifacts',
@@ -94,7 +102,7 @@ New-AzureRmResourceGroup -Name $ResourceGroupName -Location $ResourceGroupLocati
 
 if ($ValidateOnly) {
     $ErrorMessages = Format-ValidationOutput (Test-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceGroupName `
-                                                                                  -TemplateFile $TemplateFile `
+                                                                                  -TemplateFile $TemplateFile -hostingPlanName $hostingPlanName -WebsiteName $WebsiteName -WebApplication1PackageFileName $WebApplication1PackageFileName -WebApplication1PackageFolder $WebApplication1PackageFolder -ServerErrorThrshold $ServerErrorThrshold -ForbiddenRequestsThrshold $ForbiddenRequestsThrshold -CPUHighAlertThreshold $CPUHighAlertThreshold `  
                                                                                   -TemplateParameterFile $TemplateParametersFile `
                                                                                   @OptionalParameters)
     if ($ErrorMessages) {
@@ -107,7 +115,7 @@ if ($ValidateOnly) {
 else {
     New-AzureRmResourceGroupDeployment -Name ((Get-ChildItem $TemplateFile).BaseName + '-' + ((Get-Date).ToUniversalTime()).ToString('MMdd-HHmm')) `
                                        -ResourceGroupName $ResourceGroupName `
-                                       -TemplateFile $TemplateFile `
+                                       -TemplateFile $TemplateFile -hostingPlanName $hostingPlanName -WebsiteName $WebsiteName -WebApplication1PackageFileName $WebApplication1PackageFileName -WebApplication1PackageFolder $WebApplication1PackageFolder -ServerErrorThrshold $ServerErrorThrshold -ForbiddenRequestsThrshold $ForbiddenRequestsThrshold -CPUHighAlertThreshold $CPUHighAlertThreshold `
                                        -TemplateParameterFile $TemplateParametersFile `
                                        @OptionalParameters `
                                        -Force -Verbose `

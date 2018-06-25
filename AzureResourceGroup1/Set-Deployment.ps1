@@ -18,7 +18,7 @@ $HTTPqueueThreshold
 )
 
 #$userId = 'vaishali_sharma@epam.com'
-$pass = 'devops@1217'
+$pass = 'devops@0618'
 $password=$pass|ConvertTo-SecureString -AsPlainText -Force
 $cred = New-Object -TypeName System.Management.Automation.PSCredential($userId ,$password)
 Login-AzureRmAccount -Credential $cred -TenantId "b41b72d0-4e9f-4c26-8a69-f949f367c91d"

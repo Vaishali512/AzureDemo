@@ -47,6 +47,7 @@
     },
     "WebApplication1PackageFolder": {
       "type": "string",
+      "defaultvalue": "WebApplication1",
       "minLength": 1,
       "metadata": {
         "description": "WebDeploy package location. This path is relative to the _artifactsLocation parameter"
@@ -54,6 +55,7 @@
     },
     "WebApplication1PackageFileName": {
       "type": "string",
+      "defaultvalue": "package.zip",
       "minLength": 1,
       "metadata": {
         "description": "Name of the webdeploy package"

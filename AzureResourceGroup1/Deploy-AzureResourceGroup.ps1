@@ -63,9 +63,9 @@ if ($UploadArtifacts) {
     }
 
     # Create a storage account name if none was provided
-    if ($StorageAccountName -eq '') {
-        $StorageAccountName = 'stage' + ((Get-AzureRmContext).Subscription.SubscriptionId).Replace('-', '').substring(0, 19)
-    }
+    #if ($StorageAccountName -eq '') {
+     #   $StorageAccountName = 'stage' + ((Get-AzureRmContext).Subscription.SubscriptionId).Replace('-', '').substring(0, 19)
+    #}
 
     $StorageAccount = (Get-AzureRmStorageAccount | Where-Object{$_.StorageAccountName -eq $StorageAccountName})
 
